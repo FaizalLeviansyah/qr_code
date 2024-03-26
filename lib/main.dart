@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Scan Boarding Access Card',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: const Color.fromARGB(255, 58, 62, 183),
         ),
         useMaterial3: true,
       ),
@@ -30,8 +30,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({Key? key}) : super(key: key);
+
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +89,28 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //     type: BottomNavigationBarType.shifting,
+      //     currentIndex: index,
+      //     onTap: (x),
+      //     {
+      //       setState(() {
+      //         index = x;
+      //       });
+      //     },
+      //     elevation: 16.0,
+      //     showUnselectedLabels: true,
+      //     unselectedItemColor: Color.white54,
+      //     selectedItemColor: Color.white,
+      //     items: menuItemlist
+      //         .map((MenuItem menuItem) => BottomNavigationBarItem(
+      //             backgroundColor: colors[index]
+      //               icon: Icon(menuItem.iconData),
+      //               label: menuItem.text,
+      //         ))
+      //         .toList(),
+      //     ),
+      //     body: _buildBody[index]
     );
   }
 }
